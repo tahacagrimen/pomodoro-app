@@ -1,8 +1,23 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
-export const PodomoroContext = createContext();
+type PodomoroContextData = {
+  isSettingsModalOpen: boolean;
+  setIsSettingsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  shortBreak: number;
+  setShortBreak: React.Dispatch<React.SetStateAction<number>>;
+  longBreak: number;
+  setLongBreak: React.Dispatch<React.SetStateAction<number>>;
+  pomodoro: number;
+  setPomodoro: React.Dispatch<React.SetStateAction<number>>;
+};
 
-export const PodomoroProvider = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+export const PodomoroContext = createContext<PodomoroContextData>(null);
+
+export const PodomoroProvider: React.FC<Props> = ({ children }) => {
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setLongBreak] = useState(15);

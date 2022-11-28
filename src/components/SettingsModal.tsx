@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { PodomoroContext } from "../contexts/PodomoroContext.js";
 
 const SettingsModal = () => {
-  const { isModalOpen, setIsModalOpen } = useContext(AppContext);
-
-  console.log(isModalOpen);
+  const { isSettingsModalOpen, setIsSettingsModalOpen, shortBreak } =
+    useContext(PodomoroContext);
 
   return (
     <div>
-      SettingsModal <button onClick={() => setIsModalOpen(true)}>Set</button>
+      SettingsModal
+      <button onClick={() => setIsSettingsModalOpen(true)}></button>
+      {isSettingsModalOpen ? "Open" : "Closed"}
     </div>
   );
 };

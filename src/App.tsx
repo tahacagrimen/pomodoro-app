@@ -4,22 +4,24 @@ import SettingsModal from "./components/SettingsModal";
 import Timer from "./components/Timer";
 import "./styles/_app.scss";
 import "./styles/_variable.scss";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import {
   PodomoroContext,
   PodomoroProvider,
 } from "./contexts/PodomoroContext.js";
+import SettingsButton from "./components/SettingsButton";
 
 function App() {
+  const { isSettingsModalOpen } = useContext(PodomoroContext);
+
   return (
-    <PodomoroProvider>
-      <div className="App">
-        <Header />
-        <Buttons />
-        <Timer />
-        <SettingsModal />
-      </div>
-    </PodomoroProvider>
+    <div className="App">
+      <Header />
+      <Buttons />
+      <Timer />
+      {isSettingsModalOpen && <SettingsModal />}
+      <SettingsButton />
+    </div>
   );
 }
 

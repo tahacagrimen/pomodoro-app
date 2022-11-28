@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import { PodomoroProvider } from "./contexts/PodomoroContext.js";
+import { PomodoroProvider } from "./contexts/PomodoroContext.js";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <PodomoroProvider>
+  <PomodoroProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </PodomoroProvider>
+  </PomodoroProvider>
 );

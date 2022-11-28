@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { FiSettings } from "react-icons/fi";
-import { PodomoroContext } from "../contexts/PodomoroContext.js";
+import { PomodoroContext } from "../contexts/PomodoroContext.js";
 
 const SettingsButton = () => {
-  const { setIsSettingsModalOpen } = useContext(PodomoroContext);
+  const { setIsSettingsModalOpen } = useContext(PomodoroContext);
   return (
     <button
       className="settings"

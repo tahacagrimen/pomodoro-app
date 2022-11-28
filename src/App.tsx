@@ -6,13 +6,13 @@ import "./styles/_app.scss";
 import "./styles/_variable.scss";
 import { useContext } from "react";
 import {
-  PodomoroContext,
-  PodomoroProvider,
-} from "./contexts/PodomoroContext.js";
+  PomodoroContext,
+  PomodoroProvider,
+} from "./contexts/PomodoroContext.js";
 import SettingsButton from "./components/SettingsButton";
 
 function App() {
-  const { isSettingsModalOpen } = useContext(PodomoroContext);
+  const { isSettingsModalOpen } = useContext(PomodoroContext);
 
   return (
     <div className="App">

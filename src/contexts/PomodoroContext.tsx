@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-type PodomoroContextData = {
+type PomodoroContextData = {
   isSettingsModalOpen: boolean;
   setIsSettingsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   shortBreak: number;
@@ -9,22 +9,25 @@ type PodomoroContextData = {
   setLongBreak: React.Dispatch<React.SetStateAction<number>>;
   pomodoro: number;
   setPomodoro: React.Dispatch<React.SetStateAction<number>>;
+  activeBtn: string;
+  setActiveBtn: React.Dispatch<React.SetStateAction<string>>;
 };
 
 type Props = {
   children: React.ReactNode;
 };
 
-export const PodomoroContext = createContext<PodomoroContextData>(null);
+export const PomodoroContext = createContext<PomodoroContextData>(null);
 
-export const PodomoroProvider: React.FC<Props> = ({ children }) => {
+export const PomodoroProvider: React.FC<Props> = ({ children }) => {
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setLongBreak] = useState(15);
   const [pomodoro, setPomodoro] = useState(25);
+  const [activeBtn, setActiveBtn] = useState("pomodoro");
 
   return (
-    <PodomoroContext.Provider
+    <PomodoroContext.Provider
       value={{
         isSettingsModalOpen,
         setIsSettingsModalOpen,
@@ -34,9 +37,11 @@ export const PodomoroProvider: React.FC<Props> = ({ children }) => {
         setLongBreak,
         pomodoro,
         setPomodoro,
+        activeBtn,
+        setActiveBtn,
       }}
     >
       {children}
-    </PodomoroContext.Provider>
+    </PomodoroContext.Provider>
   );
 };

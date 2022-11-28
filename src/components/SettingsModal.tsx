@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { PodomoroContext } from "../contexts/PodomoroContext.js";
+import { PomodoroContext } from "../contexts/PomodoroContext.js";
 
 const SettingsModal = () => {
   return <div>SettingsModal</div>;

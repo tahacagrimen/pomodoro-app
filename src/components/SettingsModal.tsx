@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 const SettingsModal = () => {
-  return <div>SettingsModal</div>;
+  const { isModalOpen, setIsModalOpen } = useContext(AppContext);
+
+  console.log(isModalOpen);
+
+  return (
+    <div>
+      SettingsModal <button onClick={() => setIsModalOpen(true)}>Set</button>
+    </div>
+  );
 };
 
 export default SettingsModal;

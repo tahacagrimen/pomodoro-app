@@ -4,18 +4,21 @@ import SettingsModal from "./components/SettingsModal";
 import Timer from "./components/Timer";
 import "./styles/_app.scss";
 import "./styles/_variable.scss";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext, AppProvider } from "./context/AppContext";
 
 function App() {
-  const [isModalOpen, setIsModelOpen] = useState<Boolean>(false);
-
+  const { isModalOpen, setIsModelOpen } = useContext(AppContext);
   return (
-    <div className="App">
-      <Header />
-      <Buttons />
-      <Timer />
-      {isModalOpen && <SettingsModal />}
-    </div>
+    <AppProvider>
+      <div className="App">
+        <Header />
+        <Buttons />
+        <Timer />
+        {isModalOpen && <SettingsModal />}
+        <button onClick={() => setIsModelOpen(true)}>open modal</button>
+      </div>
+    </AppProvider>
   );
 }
 

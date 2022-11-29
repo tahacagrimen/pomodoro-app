@@ -12,6 +12,16 @@
 .timer {
   margin: 2rem;
   .outer {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(21, 25, 50, 1) 30%,
+      rgba(48, 71, 125, 1) 71%
+    );
+    border-radius: 50%;
+    padding: 1rem;
+    box-shadow: rgba(150, 145, 255, 0.1) 0px 30px 100px 14px;
     .middle {
       display: flex;
       align-items: center;

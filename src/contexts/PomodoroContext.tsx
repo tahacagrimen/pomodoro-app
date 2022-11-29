@@ -31,7 +31,9 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const PomodoroContext = createContext<PomodoroContextData>(null);
+export const PomodoroContext = createContext<PomodoroContextData>(
+  {} as PomodoroContextData
+);
 
 export const PomodoroProvider: React.FC<Props> = ({ children }) => {
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);

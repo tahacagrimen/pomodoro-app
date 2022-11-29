@@ -8,7 +8,6 @@
   flex-direction: column;
   padding: 1.5rem;
   width: 30%;
-
   @include lg {
     width: 50%;
   }
@@ -19,7 +18,6 @@
   @include sm {
     width: 90%;
   }
-
   height: auto;
   border-radius: calc(1rem + 1vw);
   position: absolute;

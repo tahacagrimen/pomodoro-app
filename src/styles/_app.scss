@@ -17,4 +17,28 @@
   &--poppins {
     font-family: $font3;
   }
+
+  .settings {
+    border: 0;
+    font-size: 2rem;
+    background-color: transparent;
+    color: $light_font_color;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &--red {
+      &:hover {
+        color: $main1;
+      }
+    }
+    &--blue {
+      &:hover {
+        color: $main2;
+      }
+    }
+    &--purple {
+      &:hover {
+        color: $main3;
+      }
+    }
+  }
 }

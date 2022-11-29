@@ -12,14 +12,14 @@ import {
 import SettingsButton from "./components/SettingsButton";
 
 function App() {
-  const { isSettingsModalOpen } = useContext(PomodoroContext);
+  const { isSettingsModalOpen, font } = useContext(PomodoroContext);
 
   return (
-    <div className="App">
+    <div className={`App App--${font}`}>
       <Header />
       <Buttons />
       <Timer />
-      {isSettingsModalOpen && <SettingsModal />}
+      <SettingsModal />
       <SettingsButton />
     </div>
   );

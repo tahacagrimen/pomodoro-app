@@ -11,6 +11,10 @@ type PomodoroContextData = {
   setPomodoro: React.Dispatch<React.SetStateAction<number>>;
   activeBtn: string;
   setActiveBtn: React.Dispatch<React.SetStateAction<string>>;
+  color: string;
+  setColor: React.Dispatch<React.SetStateAction<string>>;
+  font: string;
+  setFont: React.Dispatch<React.SetStateAction<string>>;
 };
 
 type Props = {
@@ -25,6 +29,8 @@ export const PomodoroProvider: React.FC<Props> = ({ children }) => {
   const [longBreak, setLongBreak] = useState(15);
   const [pomodoro, setPomodoro] = useState(25);
   const [activeBtn, setActiveBtn] = useState("pomodoro");
+  const [color, setColor] = useState("red");
+  const [font, setFont] = useState("roboto");
 
   return (
     <PomodoroContext.Provider
@@ -39,6 +45,10 @@ export const PomodoroProvider: React.FC<Props> = ({ children }) => {
         setPomodoro,
         activeBtn,
         setActiveBtn,
+        color,
+        setColor,
+        font,
+        setFont,
       }}
     >
       {children}

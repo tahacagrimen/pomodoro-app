@@ -1,0 +1,262 @@
+@import "./_variable.scss";
+
+.modal {
+  background-color: $modal_background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  width: 30%;
+  height: auto;
+  border-radius: calc(1rem + 1vw);
+  position: absolute;
+  top: 5rem;
+  transform: translateY(-200%);
+  visibility: hidden;
+  transition: all 0.75s ease;
+  &--open {
+    transform: translateY(0);
+    visibility: visible;
+  }
+  &--close {
+    transform: translateY(-200%);
+    visibility: hidden;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid lightgray;
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .btn {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: 200;
+      &--red {
+        &:hover {
+          color: $main1;
+        }
+      }
+      &--blue {
+        &:hover {
+          color: $main2;
+        }
+      }
+      &--purple {
+        &:hover {
+          color: $main3;
+        }
+      }
+    }
+  }
+  &__times {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 2px solid lightgray;
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    &__btns {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      div {
+        margin-top: 0.5rem;
+        width: 30%;
+      }
+      div > h3 {
+        font-size: 0.8rem;
+        color: $medium_font_color;
+      }
+      div > input {
+        width: 100%;
+        margin-top: 0.4rem;
+        border: 0;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: $input_background;
+        color: $dark_font_color;
+        font-weight: 600;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+        }
+      }
+    }
+  }
+  &__font {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 2px solid lightgray;
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .btn-font-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .ubuntu {
+        font-family: $font2;
+        &--active {
+          color: white;
+          background-color: black;
+        }
+      }
+      .roboto {
+        font-family: $font1;
+        &--active {
+          color: white;
+          background-color: black;
+        }
+      }
+      .poppins {
+        font-family: $font3;
+        &--active {
+          color: white;
+          background-color: black;
+        }
+      }
+    }
+    .btn-font-group button {
+      width: 2rem;
+      height: 2rem;
+      border: 0;
+      border-radius: 50%;
+      background-color: $input_background;
+      color: $dark_font_color;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      margin-left: 1rem;
+      cursor: pointer;
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+  &__color {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem 0;
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .btn-color-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      button {
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 1rem;
+        border: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:hover {
+          border: 2px solid black;
+        }
+        svg {
+          display: none;
+          font-size: 1.2rem;
+        }
+      }
+      .btn-red {
+        background-color: $main1;
+        &--active {
+          svg {
+            display: block;
+          }
+        }
+      }
+      .btn-red {
+        background-color: $main1;
+        &--active {
+          svg {
+            display: block;
+          }
+        }
+      }
+      .btn-blue {
+        background-color: $main2;
+        &--active {
+          svg {
+            display: block;
+          }
+        }
+      }
+      .btn-purple {
+        background-color: $main3;
+        &--active {
+          svg {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &__apply {
+    position: relative;
+    bottom: -3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btn {
+      height: 3rem;
+      width: 33%;
+      border: 0;
+      border-radius: 1rem;
+      color: white;
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 1px rgba(187, 187, 187, 0.6);
+      cursor: pointer;
+      &:hover {
+        border: 2px solid black;
+      }
+      &--red {
+        background-color: $main1;
+        &:hover {
+        }
+      }
+      &--blue {
+        background-color: $main2;
+      }
+      &--purple {
+        background-color: $main3;
+      }
+    }
+  }
+}

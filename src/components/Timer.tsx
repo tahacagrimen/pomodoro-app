@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { PomodoroContext } from "../contexts/PomodoroContext";
+import "../styles/_timer.scss";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 const Timer = () => {
   const {
@@ -17,7 +19,10 @@ const Timer = () => {
   } = useContext(PomodoroContext);
 
   const minutes = Math.floor(miliseconds / 60000);
-  const seconds = ((miliseconds % 60000) / 1000).toFixed(0);
+  const seconds =
+    (miliseconds % 60000) / 1000 < 10
+      ? `0${Math.floor((miliseconds % 60000) / 1000)}`
+      : Math.floor((miliseconds % 60000) / 1000);
 
   useEffect(() => {
     if (activeBtn === "pomodoro") {
@@ -43,24 +48,45 @@ const Timer = () => {
 
   return (
     <div className="timer">
-      <div className="outer"></div>
-      <div className="middle">
-        <div className="countdown">
-          {minutes}:{seconds}
-        </div>
-        <div className="btn">
-          {isTimerRunning ? (
-            <button onClick={() => setIsTimerRunning((prev) => !prev)}>
-              PAUSE
-            </button>
-          ) : (
-            <button onClick={() => setIsTimerRunning((prev) => !prev)}>
-              START
-            </button>
+      <div className="outer">
+        <CountdownCircleTimer
+          isPlaying={isTimerRunning}
+          key={activeBtn}
+          duration={miliseconds / 1000}
+          size={300}
+          strokeWidth={12}
+          rotation="counterclockwise"
+          trailStrokeWidth={24}
+          trailColor="#151932"
+          initialRemainingTime={miliseconds / 1000}
+          colors={`${
+            color === "red"
+              ? "#f87070"
+              : color === "blue"
+              ? "#72f1f7"
+              : "#d981f9"
+          }`}
+        >
+          {({ remainingTime }) => (
+            <div className="middle">
+              <div className="countdown">
+                {minutes}:{seconds}
+              </div>
+              <div className="btn">
+                {isTimerRunning ? (
+                  <button onClick={() => setIsTimerRunning((prev) => !prev)}>
+                    PAUSE
+                  </button>
+                ) : (
+                  <button onClick={() => setIsTimerRunning((prev) => !prev)}>
+                    START
+                  </button>
+                )}
+              </div>
+            </div>
           )}
-        </div>
+        </CountdownCircleTimer>
       </div>
-      <div className="inner"></div>
     </div>
   );
 };

@@ -3,12 +3,16 @@ import { PomodoroContext } from "../contexts/PomodoroContext";
 import "../styles/_buttons.scss";
 
 const Buttons: React.FC = () => {
-  const { activeBtn, setActiveBtn, color } = useContext(PomodoroContext);
+  const { activeBtn, setActiveBtn, color, isTimerRunning, setIsTimerRunning } =
+    useContext(PomodoroContext);
 
   return (
     <div className="btn-group">
       <button
-        onClick={() => setActiveBtn("pomodoro")}
+        onClick={() => {
+          setActiveBtn("pomodoro");
+          setIsTimerRunning(false);
+        }}
         className={`btn-group__pomodoro btn-group__pomodoro${
           activeBtn === "pomodoro" ? "--active" : "--deactive"
         }${
@@ -23,7 +27,10 @@ const Buttons: React.FC = () => {
         }${
           color === "red" ? "--red" : color === "blue" ? "--blue" : "--purple"
         }`}
-        onClick={() => setActiveBtn("short")}
+        onClick={() => {
+          setActiveBtn("short");
+          setIsTimerRunning(false);
+        }}
       >
         short break
       </button>
@@ -33,7 +40,10 @@ const Buttons: React.FC = () => {
         }${
           color === "red" ? "--red" : color === "blue" ? "--blue" : "--purple"
         }`}
-        onClick={() => setActiveBtn("long")}
+        onClick={() => {
+          setActiveBtn("long");
+          setIsTimerRunning(false);
+        }}
       >
         long break
       </button>

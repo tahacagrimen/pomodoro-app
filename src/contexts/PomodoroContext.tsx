@@ -41,7 +41,7 @@ export const PomodoroProvider: React.FC<Props> = ({ children }) => {
   const [activeBtn, setActiveBtn] = useState("pomodoro");
   const [color, setColor] = useState("red");
   const [font, setFont] = useState("roboto");
-  const [isTimerRunning, setIsTimerRunning] = useState(true);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [isTimerPaused, setIsTimerPaused] = useState(false);
   const [isTimerStopped, setIsTimerStopped] = useState(false);
   const [isTimerCompleted, setIsTimerCompleted] = useState(false);

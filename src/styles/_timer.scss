@@ -1,1 +1,39 @@
 @import "./_variable.scss";
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 113px;
+  }
+}
+
+.timer {
+  margin: 2rem;
+  .outer {
+    .middle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #151932;
+      width: 84%;
+      height: 84%;
+      border-radius: 50%;
+      .countdown {
+        font-size: 5rem;
+        color: $light_font_color;
+      }
+      .btn button {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        font-weight: 500;
+        color: $light_font_color;
+        font-size: 1.2rem;
+        letter-spacing: 10px;
+      }
+    }
+  }
+}

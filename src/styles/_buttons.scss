@@ -1,0 +1,49 @@
+@import "./_variable.scss";
+
+.btn-group {
+  padding: 0.3rem;
+  background-color: $btn-grp-background;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 20rem;
+  height: 3rem;
+  button {
+    border: 0;
+    border-radius: 1rem;
+    background-color: $btn-grp-background;
+    color: $medium_font_color;
+    flex: 1;
+    height: 100%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .btn-group__pomodoro--active--red,
+  .btn-group__short--active--red,
+  .btn-group__long--active--red {
+    background-color: $main1;
+    color: $dark_font_color;
+  }
+
+  .btn-group__pomodoro--active--blue,
+  .btn-group__short--active--blue,
+  .btn-group__long--active--blue {
+    background-color: $main2;
+    color: $dark_font_color;
+  }
+
+  .btn-group__pomodoro--active--purple,
+  .btn-group__short--active--purple,
+  .btn-group__long--active--purple {
+    background-color: $main3;
+    color: $dark_font_color;
+  }
+}

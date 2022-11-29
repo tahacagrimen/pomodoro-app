@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { PomodoroContext } from "../contexts/PomodoroContext";
+import "../styles/_buttons.scss";
 
 const Buttons: React.FC = () => {
   const { activeBtn, setActiveBtn, color } = useContext(PomodoroContext);
@@ -8,7 +9,7 @@ const Buttons: React.FC = () => {
     <div className="btn-group">
       <button
         onClick={() => setActiveBtn("pomodoro")}
-        className={`__pomodoro-btn __pomodoro-btn${
+        className={`btn-group__pomodoro btn-group__pomodoro${
           activeBtn === "pomodoro" ? "--active" : "--deactive"
         }${
           color === "red" ? "--red" : color === "blue" ? "--blue" : "--purple"
@@ -17,7 +18,7 @@ const Buttons: React.FC = () => {
         pomodoro
       </button>
       <button
-        className={`__short-btn __short-btn${
+        className={`btn-group__short btn-group__short${
           activeBtn === "short" ? "--active" : "--deactive"
         }${
           color === "red" ? "--red" : color === "blue" ? "--blue" : "--purple"
@@ -27,7 +28,7 @@ const Buttons: React.FC = () => {
         short break
       </button>
       <button
-        className={`__long-btn __long-btn${
+        className={`btn-group__long btn-group__long${
           activeBtn === "long" ? "--active" : "--deactive"
         }${
           color === "red" ? "--red" : color === "blue" ? "--blue" : "--purple"

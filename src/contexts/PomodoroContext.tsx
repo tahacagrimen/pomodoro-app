@@ -17,10 +17,6 @@ type PomodoroContextData = {
   setFont: React.Dispatch<React.SetStateAction<string>>;
   isTimerRunning: boolean;
   setIsTimerRunning: React.Dispatch<React.SetStateAction<boolean>>;
-  isTimerPaused: boolean;
-  setIsTimerPaused: React.Dispatch<React.SetStateAction<boolean>>;
-  isTimerStopped: boolean;
-  setIsTimerStopped: React.Dispatch<React.SetStateAction<boolean>>;
   isTimerCompleted: boolean;
   setIsTimerCompleted: React.Dispatch<React.SetStateAction<boolean>>;
   miliseconds: number;
@@ -44,8 +40,6 @@ export const PomodoroProvider: React.FC<Props> = ({ children }) => {
   const [color, setColor] = useState("red");
   const [font, setFont] = useState("roboto");
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [isTimerPaused, setIsTimerPaused] = useState(false);
-  const [isTimerStopped, setIsTimerStopped] = useState(false);
   const [isTimerCompleted, setIsTimerCompleted] = useState(false);
   const [miliseconds, setMiliseconds] = useState(0);
 
@@ -68,10 +62,6 @@ export const PomodoroProvider: React.FC<Props> = ({ children }) => {
         setFont,
         isTimerRunning,
         setIsTimerRunning,
-        isTimerPaused,
-        setIsTimerPaused,
-        isTimerStopped,
-        setIsTimerStopped,
         isTimerCompleted,
         setIsTimerCompleted,
         miliseconds,
